@@ -16,7 +16,7 @@
     "lokijs": "1.5.7"
   },
   "peerDependencies": {
-    "@angular/core": "~8.2.14",
+    "@angular/core": "~9.0.1",
     "custom-idle-queue": "2.1.2",
     "localforage": "1.4.0",
     "lokijs": "1.5.7",
