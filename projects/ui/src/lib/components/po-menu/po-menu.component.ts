@@ -146,7 +146,7 @@ export class PoMenuComponent extends PoMenuBaseComponent implements OnDestroy, O
               menuService: PoMenuService) {
 
     super(menuService);
-    this.parentRef = viewRef['_view']['component'];
+    this.parentRef = this; //viewRef['_view']['component']
   }
 
   private get isActiveItemMenuSubMenu() {

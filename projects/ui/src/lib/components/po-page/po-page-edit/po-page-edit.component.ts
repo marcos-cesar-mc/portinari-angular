@@ -30,11 +30,11 @@ import { callAction, hasAction } from '../po-page-util/po-page-util';
 export class PoPageEditComponent extends PoPageEditBaseComponent {
   hasAction: Function = hasAction;
   callAction: Function = callAction;
-  parentContext: ViewContainerRef;
+  parentContext: any;
 
   constructor(viewRef: ViewContainerRef) {
     super();
-    this.parentContext = viewRef['_view']['component'];
+    this.parentContext = this; // viewRef['_view']['component']
   }
 
   getIcon(icon: string): string {

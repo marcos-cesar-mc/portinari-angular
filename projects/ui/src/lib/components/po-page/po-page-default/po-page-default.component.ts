@@ -38,7 +38,7 @@ export class PoPageDefaultComponent extends PoPageDefaultBaseComponent implement
   isMobile: boolean;
 
   private maxWidthMobile: number = 480;
-  private parentRef: ViewContainerRef;
+  private parentRef: any;
 
   constructor(
     viewRef: ViewContainerRef,
@@ -46,7 +46,7 @@ export class PoPageDefaultComponent extends PoPageDefaultBaseComponent implement
     private router: Router) {
 
     super();
-    this.parentRef = viewRef['_view']['component'];
+    this.parentRef = this; // viewRef['_view']['component']
   }
 
   public ngAfterContentInit(): void {

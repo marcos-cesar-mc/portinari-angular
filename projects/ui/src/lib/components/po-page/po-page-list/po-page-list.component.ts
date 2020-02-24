@@ -42,7 +42,7 @@ export class PoPageListComponent extends PoPageListBaseComponent implements Afte
   dropdownActions: Array<PoPageAction>;
   isMobile: boolean;
   limitPrimaryActions: number = 3;
-  parentRef: ViewContainerRef;
+  parentRef: any;
 
   private isRecalculate = true;
   private maxWidthMobile: number = 480;
@@ -58,7 +58,7 @@ export class PoPageListComponent extends PoPageListBaseComponent implements Afte
     private router: Router) {
 
     super(languageService);
-    this.parentRef = viewRef['_view']['component'];
+    this.parentRef = this; // viewRef['_view']['component']
     this.initializeListeners();
   }
 

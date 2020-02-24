@@ -31,11 +31,11 @@ export class PoPageDetailComponent extends PoPageDetailBaseComponent {
 
   callActionFn = callAction;
   hasActionFn = hasAction;
-  parentContext: ViewContainerRef;
+  parentContext: any;
 
   constructor(viewRef: ViewContainerRef) {
     super();
-    this.parentContext = viewRef['_view']['component'];
+    this.parentContext = this; // viewRef['_view']['component']
   }
 
   hasAnyAction(): boolean {

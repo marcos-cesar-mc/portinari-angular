@@ -109,7 +109,7 @@ export class PoTableComponent extends PoTableBaseComponent implements AfterViewI
 
     super(poDate);
 
-    this.parentRef = viewRef['_view']['component'];
+    this.parentRef = this; //viewRef['_view']['component']
     this.differ = differs.find([]).create(null);
 
     // TODO: #5550 ao remover este listener, no portal, quando as colunas forem fixas não sofrem

@@ -86,7 +86,7 @@ export class PoPageChangePasswordComponent extends PoPageChangePasswordBaseCompo
     private poComponentInjector: PoComponentInjectorService,
     viewRef: ViewContainerRef) {
       super();
-      this.parentRef = viewRef['_view']['component'];
+      this.parentRef = this; //viewRef['_view']['component']
   }
 
   ngAfterViewInit() {
