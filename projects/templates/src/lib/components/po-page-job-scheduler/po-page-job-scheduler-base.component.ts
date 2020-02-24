@@ -1,5 +1,5 @@
 import { AbstractControl } from '@angular/forms';
-import { Input } from '@angular/core';
+import { Input, Directive } from '@angular/core';
 
 import { PoBreadcrumb } from '@portinari/portinari-ui';
 
@@ -13,6 +13,7 @@ import { PoPageJobSchedulerService } from './po-page-job-scheduler.service';
  * O `po-page-job-scheduler` é uma página para criação e atualização do *Job Scheduler* de forma simplificada, apenas informando
  * o serviço (endpoint) para consumo, sem a necessidade de criar componentes e tratamentos dos dados.
  */
+@Directive()
 export class PoPageJobSchedulerBaseComponent {
 
   /** Objeto com propriedades do breadcrumb. */
