@@ -125,8 +125,7 @@ describe('PoPageDynamicTableComponent:', () => {
             metadata: 'localhost:4300/api/people/metadata' });
       });
 
-      // TODO NG V9
-      xit('should configure properties based on the return of onload function', fakeAsync(() => {
+      it('should configure properties based on the return of onload function', fakeAsync(() => {
         component.actions = {
           detail: '/datail',
           edit: '/edit'
