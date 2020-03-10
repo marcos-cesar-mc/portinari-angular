@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="https://portinari.io">
     <img width="250" src="./logo.jpg">
@@ -24,11 +23,13 @@ Biblioteca de componentes de UI para Angular.
 Para começar a utilizar o **Po** (Portinari UI) é pré-requisito ter o `Node.js` instalado (versão 10.x ou acima) e o seu gerenciador de pacote favorito na versão mais atual. Caso você ainda não tenha instalado o pacote `@angular/cli`, instale-o via `npm` ou `yarn`.
 
 Instalando com npm:
+
 ```
 npm i -g @angular/cli@8.0.0
 ```
 
 Caso prefira instalar com o yarn:
+
 ```
 yarn global add @angular/cli@8.0.0
 ```
@@ -44,7 +45,6 @@ ng new my-po-project --skipInstall
 ```
 
 > O parâmetro `--skip-install` permite criar o projeto, contudo, não instalará as dependências automaticamente.
-
 
 #### Passo 1.1 - Instalando as dependências
 
@@ -72,11 +72,13 @@ Veja abaixo a lista de dependências e as versões compatíveis, elas devem ser 
 Após verificar se estas dependências do seu projeto estão com as versões compatíveis declaradas acima, acesse a pasta raiz do seu projeto e execute o comando abaixo:
 
 Instalando com npm:
+
 ```
 npm install
 ```
 
 Caso prefira instalar com o yarn:
+
 ```
 yarn install
 ```
@@ -95,15 +97,15 @@ ng add @portinari/portinari-ui
 
 ### Passo 3 - Rode o seu projeto
 
-Agora basta executar mais um comando para subir a aplicação e ver o seu projeto rodando no *browser* ;).
+Agora basta executar mais um comando para subir a aplicação e ver o seu projeto rodando no _browser_ ;).
 
 ```
 ng serve
 ```
 
-Abra o *browser* e acesse a url http://localhost:4200. Pronto!
+Abra o _browser_ e acesse a url http://localhost:4200. Pronto!
 
-----
+---
 
 ### E agora?
 
@@ -112,11 +114,13 @@ Agora é só abrir seu **editor / IDE** favorito e começar a trabalhar no seu p
 Caso você queira utilizar nossos componentes de templates, como o **[po-page-login](http://portinari.io/documentation/po-page-login)**, **[po-modal-password-recovery](http://portinari.io/documentation/po-modal-password-recovery)**, **[po-page-blocked-user](http://portinari.io/documentation/po-page-blocked-user)**, **[po-page-dynamic-table](http://portinari.io/documentation/po-page-dynamic-table)** entre outros, basta instalar o pacote `@portinari/portinari-templates` e incluí-lo nas dependências do seu projeto rodando o comando abaixo:
 
 Instalando com npm:
+
 ```
 npm i --save @portinari/portinari-templates
 ```
 
 Caso prefira instalar com o yarn:
+
 ```
 yarn add @portinari/portinari-templates
 ```

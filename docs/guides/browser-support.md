@@ -1,5 +1,5 @@
-[comment]: # (@label Compatibilidade com os navegadores)
-[comment]: # (@link guides/browser-support)
+[comment]: # '@label Compatibilidade com os navegadores'
+[comment]: # '@link guides/browser-support'
 
 Atualmente o PO está homologado para os seguintes navegadores:
 
@@ -47,20 +47,20 @@ Atualmente o PO está homologado para os seguintes navegadores:
 </div>
 
 > Nossa homologação tem como base os navegadores que o Angular suporta nativamente. Para saber mais, acesse o guia
-[*Browser support*](https://angular.io/guide/browser-support) do Angular.
+> [_Browser support_](https://angular.io/guide/browser-support) do Angular.
 
-## Utilização de *polyfills*
+## Utilização de _polyfills_
 
-Para a compatibilidade com alguns desses navegadores, é necessário utilizar os *polyfills*
+Para a compatibilidade com alguns desses navegadores, é necessário utilizar os _polyfills_
 disponibilizados pelo Angular no arquivo `/src/polyfills.ts`.
 
-O exemplo abaixo contém os *polyfills* utilizados no PO Portal e que também deve ser habilitado no seu projeto para a utilização do PO em alguns navegadores:
+O exemplo abaixo contém os _polyfills_ utilizados no PO Portal e que também deve ser habilitado no seu projeto para a utilização do PO em alguns navegadores:
 
 ```
 npm i --save core-js@3.1.4
 ```
 
-``` javascript
+```javascript
 /**
  * BROWSER POLYFILLS
  */
@@ -71,15 +71,14 @@ import 'core-js/es';
 /**
  * Zone JS is required by Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
-
+import 'zone.js/dist/zone'; // Included with Angular CLI.
 ```
 
-> Para saber mais sobre sobre como funciona um *polyfill*
-acesse a documentação [*Browser support*](https://angular.io/guide/browser-support) do Angular.
+> Para saber mais sobre sobre como funciona um _polyfill_
+> acesse a documentação [_Browser support_](https://angular.io/guide/browser-support) do Angular.
 
 ## Executando a aplicação localmente
 
-A partir do Angular CLI v8, os comandos *ng serve*, *ng test* e *ng e2e* são executados com ES2015, não sendo suportado para navegadores como Internet Explorer.
+A partir do Angular CLI v8, os comandos _ng serve_, _ng test_ e _ng e2e_ são executados com ES2015, não sendo suportado para navegadores como Internet Explorer.
 
 Para conseguir executar a aplicação localmente no Internet Explorer, veja a documentação [Desenvolvendo localmente em navegadores antigos](https://angular.io/guide/deployment#local-development-in-older-browsers).

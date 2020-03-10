@@ -1,5 +1,5 @@
-[comment]: # (@label Guia de implementação de APIs)
-[comment]: # (@link guides/api)
+[comment]: # '@label Guia de implementação de APIs'
+[comment]: # '@link guides/api'
 
 ## Conteúdo
 
@@ -13,18 +13,20 @@
   - [Filtros](guides/api#filters)
   - [Paginação](guides/api#pagination)
 
-
 <a id="introduction"></a>
+
 ## Introdução
 
-Este guia tem a finalidade de exibir os modelos de requisições e respostas HTTP que o Portinari UI utiliza em seus componentes e *interceptors*.
-
+Este guia tem a finalidade de exibir os modelos de requisições e respostas HTTP que o Portinari UI utiliza em seus componentes e _interceptors_.
 
 <a id="responseMessage"></a>
+
 ## Formato das mensagens de resposta
+
 Alguns componentes utilizam `endpoints` para poder buscar os itens. Para isso, é necessário que o formato no qual estes itens serão devolvidos seja padronizado, para uma comunicação mais efetiva. A seguir serão apresentados o formato de mensagem de resposta esperado pelos `endpoints`.
 
 <a id="errorMessages"></a>
+
 ### Mensagens de erro
 
 Para todas as mensagens que representam um erro (códigos HTTP 4xx e 5xx) deve-se retornar obrigatoriamente os campos a seguir, caso deseje apresentá-las:
@@ -71,9 +73,10 @@ Opcionalmente pode-se retornar os campos:
 ```
 
 <a id="successMessages"></a>
+
 ### Mensagens de sucesso
 
-Mensagens de sucesso (código HTTP 2xx) devem retornar diretamente a entidade que representa o objeto resultante da operação do *endpoint*. Exemplo:
+Mensagens de sucesso (código HTTP 2xx) devem retornar diretamente a entidade que representa o objeto resultante da operação do _endpoint_. Exemplo:
 
 ```
 GET http://portinari-example.com.br/api/users/10
@@ -87,13 +90,13 @@ GET http://portinari-example.com.br/api/users/10
 }
 ```
 
-Opcionalmente, o atributo `_messages` pode ser incluído no objeto retornado para fornecer alguma informação complementar ao processamento realizado (mensagens de aviso, de negócio, etc). 
+Opcionalmente, o atributo `_messages` pode ser incluído no objeto retornado para fornecer alguma informação complementar ao processamento realizado (mensagens de aviso, de negócio, etc).
 
 O formato do objeto de mensagem segue o padrão anteriormente descrito, para mensagens de erro.
 
 ```
 GET http://portinari-example.com.br/api/users/10
- 
+
 {
     id: 10,
     name: "John",
@@ -110,9 +113,10 @@ GET http://portinari-example.com.br/api/users/10
 ```
 
 <a id="successMessagesForCollections"></a>
+
 #### Mensagens de sucesso para coleções
 
-Nos casos em que o resultado da operação do *endpoint* representa uma coleção (lista de itens), os itens devem estar agrupados em um objeto com as propriedades `hasNext`, indicando se existe uma próxima página com mais registros para aquela coleção e `items` que representam a lista de itens retornados.
+Nos casos em que o resultado da operação do _endpoint_ representa uma coleção (lista de itens), os itens devem estar agrupados em um objeto com as propriedades `hasNext`, indicando se existe uma próxima página com mais registros para aquela coleção e `items` que representam a lista de itens retornados.
 
 ```
 {
@@ -124,6 +128,7 @@ Nos casos em que o resultado da operação do *endpoint* representa uma coleçã
   ]
 }
 ```
+
 Para o retorno de coleções, também é possível incluir o atributo `_messages`, conforme segue:
 
 ```
@@ -144,14 +149,16 @@ Para o retorno de coleções, também é possível incluir o atributo `_messages
 ```
 
 <a id="collections"></a>
+
 ## Formato das requisições para as coleções
 
-Os *endpoints* também podem receber parâmetros na requisição que servem para especificar o tipo de resposta desejada, por exemplo: ordenação. A seguir, serão apresentados os parâmetros que poderão ser enviados nessas requisições.
+Os _endpoints_ também podem receber parâmetros na requisição que servem para especificar o tipo de resposta desejada, por exemplo: ordenação. A seguir, serão apresentados os parâmetros que poderão ser enviados nessas requisições.
 
 <a id="order"></a>
+
 ### Ordenação
 
-Quando algum componente, como `po-lookup`, realizar alguma ordenação será enviado o parâmetro  `order`, com as seguintes características:
+Quando algum componente, como `po-lookup`, realizar alguma ordenação será enviado o parâmetro `order`, com as seguintes características:
 
 - campos precedidos por um sinal de subtração (-) devem ser ordenados de forma decrescente;
 - campos que omitirem o sinal (subtração) devem ser ordenados de forma crescente.
@@ -163,16 +170,18 @@ GET http://portinari-example.com.br/api/users?order=name,-age,surname
 ```
 
 <a id="filters"></a>
+
 ### Filtros
 
 Aos realizar um filtro será enviado um parâmetro no formato `property=value`:
 
-``` GET http://portinari-example.com.br/api/users?name=john&surname=doe ```
+`GET http://portinari-example.com.br/api/users?name=john&surname=doe`
 
 <a id="pagination"></a>
+
 ### Paginação
 
-A paginação é definida pelos parâmetros `page` e `pageSize`, respeitando as seguintes regras: 
+A paginação é definida pelos parâmetros `page` e `pageSize`, respeitando as seguintes regras:
 
 - o valor do parâmetro `page` deve ser um valor numérico (maior que zero) representando a página solicitada;
 - o valor do parâmetro `pageSize` deve ser um valor numérico (maior que zero) representando o total de registros retornados na consulta;
@@ -181,4 +190,4 @@ A paginação é definida pelos parâmetros `page` e `pageSize`, respeitando as 
 
 Por exemplo, a seguinte requisição deve retornar a quarta página de registros (dos registros 31 a 40 inclusive) de usuários:
 
-``` GET http://portinari-example.com.br/api/users/?page=4&pageSize=10 ```
+`GET http://portinari-example.com.br/api/users/?page=4&pageSize=10`

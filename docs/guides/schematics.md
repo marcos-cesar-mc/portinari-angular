@@ -1,11 +1,11 @@
-[comment]: # (@label Schematics)
-[comment]: # (@link guides/schematics)
+[comment]: # '@label Schematics'
+[comment]: # '@link guides/schematics'
 
-O PO contém *schematics* do [Angular CLI](https://angular.io/cli) em seu pacote, para facilitar o desenvolvimento de aplicações PO.
+O PO contém _schematics_ do [Angular CLI](https://angular.io/cli) em seu pacote, para facilitar o desenvolvimento de aplicações PO.
 
 ## Instalando Schematics
 
-Um vez que for instalado o pacote `@portinari/portinari-ui`, teremos disponível os *schematics* através do Angular CLI.
+Um vez que for instalado o pacote `@portinari/portinari-ui`, teremos disponível os _schematics_ através do Angular CLI.
 
 Caso esteja iniciando uma aplicação com PO, indica-se utilizar o comando abaixo,
 no qual será instalado o pacote `@portinari/portinari-ui` e realizadas algumas configurações, que serão descritas em seguida:
@@ -18,11 +18,11 @@ ng add @portinari/portinari-ui
 - Importa o módulo do PO;
 - Configura o tema do PO no projeto;
 
-### Schematics 
+### Schematics
 
 O `PO` vem com vários `schematics` que podem ser usados ​​para gerar componentes facilmente.
 
-Para gerar o componente, execute o comando abaixo, onde ```schematic-name``` é o componente que deseja:
+Para gerar o componente, execute o comando abaixo, onde `schematic-name` é o componente que deseja:
 
 ```
 ng generate @portinari/portinari-ui:<schematic-name>

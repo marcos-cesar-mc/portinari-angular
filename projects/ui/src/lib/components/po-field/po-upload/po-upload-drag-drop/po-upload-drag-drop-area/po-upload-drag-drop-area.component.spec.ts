@@ -15,7 +15,7 @@ describe('PoUploadDragDropAreaComponent:', () => {
 
   configureTestSuite(() => {
     TestBed.configureTestingModule({
-      declarations: [ PoUploadDragDropAreaComponent ]
+      declarations: [PoUploadDragDropAreaComponent]
     });
   });
 
@@ -32,7 +32,6 @@ describe('PoUploadDragDropAreaComponent:', () => {
   });
 
   describe('Methods:', () => {
-
     it('focus: should call `focus` of `selectFilesLinkElement`', () => {
       component.selectFilesLinkElement = {
         nativeElement: {
@@ -46,11 +45,9 @@ describe('PoUploadDragDropAreaComponent:', () => {
 
       expect(component.selectFilesLinkElement.nativeElement.focus).toHaveBeenCalled();
     });
-
   });
 
   describe('Templates:', () => {
-
     it(`should contain 'po-upload-drag-drop-area' and 'po-upload-drag-drop-area-container' classes.`, () => {
       expect(nativeElement.querySelector('.po-upload-drag-drop-area')).toBeTruthy();
       expect(nativeElement.querySelector('.po-upload-drag-drop-area-container')).toBeTruthy();
@@ -82,7 +79,6 @@ describe('PoUploadDragDropAreaComponent:', () => {
 
     it(`should contain 'po-upload-drag-drop-area-overlay-icon' and 'po-upload-drag-drop-area-overlay-label' if disabled is false
       and overlay is true`, () => {
-
       component.disabled = false;
       component.overlay = true;
 
@@ -94,7 +90,6 @@ describe('PoUploadDragDropAreaComponent:', () => {
 
     it(`shouldn't contain 'po-upload-drag-drop-area-overlay-icon' and 'po-upload-drag-drop-area-overlay-label' if disabled and overlay
       are true`, () => {
-
       component.disabled = true;
       component.overlay = true;
 
@@ -106,7 +101,6 @@ describe('PoUploadDragDropAreaComponent:', () => {
 
     it(`shouldn't contain 'po-upload-drag-drop-area-overlay-icon' and 'po-upload-drag-drop-area-overlay-label' if disabled and overlay
       are false`, () => {
-
       component.disabled = false;
       component.overlay = false;
 
@@ -140,7 +134,7 @@ describe('PoUploadDragDropAreaComponent:', () => {
       component.disabled = false;
       component.overlay = true;
       component.directoryCompatible = true;
-      component.literals = {...poUploadLiteralsDefault[poLocaleDefault]};
+      component.literals = { ...poUploadLiteralsDefault[poLocaleDefault] };
 
       changeDetector.detectChanges();
 
@@ -153,7 +147,7 @@ describe('PoUploadDragDropAreaComponent:', () => {
       component.disabled = false;
       component.overlay = true;
       component.directoryCompatible = false;
-      component.literals = {...poUploadLiteralsDefault[poLocaleDefault]};
+      component.literals = { ...poUploadLiteralsDefault[poLocaleDefault] };
 
       changeDetector.detectChanges();
 
@@ -165,7 +159,7 @@ describe('PoUploadDragDropAreaComponent:', () => {
     it('should apply literals `dragFoldersHere` and `selectFolderOnComputer`, if directoryCompatible is true ', () => {
       component.disabled = false;
       component.directoryCompatible = true;
-      component.literals = {...poUploadLiteralsDefault[poLocaleDefault]};
+      component.literals = { ...poUploadLiteralsDefault[poLocaleDefault] };
 
       changeDetector.detectChanges();
 
@@ -179,7 +173,7 @@ describe('PoUploadDragDropAreaComponent:', () => {
     it('should apply literals `dragFilesHere` and `selectFilesOnComputer`, if directoryCompatible is true ', () => {
       component.disabled = false;
       component.directoryCompatible = false;
-      component.literals = {...poUploadLiteralsDefault[poLocaleDefault]};
+      component.literals = { ...poUploadLiteralsDefault[poLocaleDefault] };
 
       changeDetector.detectChanges();
 
@@ -190,5 +184,4 @@ describe('PoUploadDragDropAreaComponent:', () => {
       expect(dragAreaButton.innerHTML).toBe(poUploadLiteralsDefault[poLocaleDefault].selectFilesOnComputer);
     });
   });
-
 });

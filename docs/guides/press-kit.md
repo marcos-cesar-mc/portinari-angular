@@ -1,5 +1,5 @@
-[comment]: # (@label Press Kit)
-[comment]: # (@link guides/press-kit)
+[comment]: # '@label Press Kit'
+[comment]: # '@link guides/press-kit'
 
 ## Logomarca
 
