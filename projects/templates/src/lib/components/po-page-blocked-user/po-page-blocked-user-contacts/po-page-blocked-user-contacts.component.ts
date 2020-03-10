@@ -24,10 +24,11 @@ export class PoPageBlockedUserContactsComponent implements AfterViewInit, OnChan
 
   @ViewChild('phoneItem', { static: true }) phoneItem: ElementRef;
 
-  constructor(private changeDetector: ChangeDetectorRef) {}
+  constructor(public changeDetector: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.checkContactItemWidth();
+    this.changeDetector.detectChanges();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -41,13 +42,11 @@ export class PoPageBlockedUserContactsComponent implements AfterViewInit, OnChan
       this.overflowItem = true;
       return;
     } else {
-      setTimeout(() => {
-        const phoneWidth = this.phoneItem.nativeElement.offsetWidth;
-        const mailWidth = this.mailItem.nativeElement.offsetWidth;
-        const contactGroupHalfWidth = this.contactGroup.nativeElement.offsetWidth / 2;
+      const phoneWidth = this.phoneItem.nativeElement.offsetWidth;
+      const mailWidth = this.mailItem.nativeElement.offsetWidth;
+      const contactGroupHalfWidth = this.contactGroup.nativeElement.offsetWidth / 2;
 
-        this.overflowItem = phoneWidth > contactGroupHalfWidth || mailWidth > contactGroupHalfWidth - poPageBlockedUserContactItemMargin;
-      });
+      this.overflowItem = phoneWidth > contactGroupHalfWidth || mailWidth > contactGroupHalfWidth - poPageBlockedUserContactItemMargin;
     }
     this.changeDetector.detectChanges();
   }
