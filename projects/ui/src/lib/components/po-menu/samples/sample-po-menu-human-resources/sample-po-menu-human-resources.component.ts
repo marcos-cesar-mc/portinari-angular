@@ -19,21 +19,27 @@ export class SamplePoMenuHumanResourcesComponent {
   menuItemSelected: string;
 
   menus: Array<PoMenuItem> = [
-    { label: 'Register user', action: this.printMenuAction, icon: 'po-icon-user', shortLabel: 'Register' },
-    { label: 'Timekeeping', action: this.printMenuAction, icon: 'po-icon-clock', shortLabel: 'Timekeeping', badge: { value: 1 } },
+    { label: 'Register user', action: this.printMenuAction.bind(this), icon: 'po-icon-user', shortLabel: 'Register' },
+    {
+      label: 'Timekeeping',
+      action: this.printMenuAction.bind(this),
+      icon: 'po-icon-clock',
+      shortLabel: 'Timekeeping',
+      badge: { value: 1 }
+    },
     { label: 'Useful links', icon: 'po-icon-share', shortLabel: 'Links', subItems: [
-      { label: 'Ministry of Labour', action: this.printMenuAction, link: 'http://trabalho.gov.br/' },
-      { label: 'SindPD Syndicate', action: this.printMenuAction, link: 'http://www.sindpd.com.br/' }
+      { label: 'Ministry of Labour', action: this.printMenuAction.bind(this), link: 'http://trabalho.gov.br/' },
+      { label: 'SindPD Syndicate', action: this.printMenuAction.bind(this), link: 'http://www.sindpd.com.br/' }
     ]},
     { label: 'Benefits', icon: 'po-icon-star', shortLabel: 'Benefits', subItems: [
       { label: 'Meal tickets', subItems: [
-        { label: 'Acceptance network ', action: this.printMenuAction },
-        { label: 'Extracts', action: this.printMenuAction, subItems: [
-          { label: 'Monthly', action: this.printMenuAction, badge: { value: 3, color: 'color-03' } },
-          { label: 'Custom', action: this.printMenuAction }
+        { label: 'Acceptance network ', action: this.printMenuAction.bind(this) },
+        { label: 'Extracts', action: this.printMenuAction.bind(this), subItems: [
+          { label: 'Monthly', action: this.printMenuAction.bind(this), badge: { value: 3, color: 'color-03' } },
+          { label: 'Custom', action: this.printMenuAction.bind(this) }
         ]}
       ]},
-      { label: 'Transportation tickets', action: this.printMenuAction, badge: { value: 12 } }
+      { label: 'Transportation tickets', action: this.printMenuAction.bind(this), badge: { value: 12 } }
     ]}
   ];
 

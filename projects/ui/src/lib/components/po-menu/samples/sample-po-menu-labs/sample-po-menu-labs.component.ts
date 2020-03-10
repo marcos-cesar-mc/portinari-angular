@@ -23,9 +23,9 @@ export class SamplePoMenuLabsComponent implements OnInit {
   badgeColor: string;
   badgeValue: number;
   buttons: Array<PoButtonGroupItem> = [
-    { label: 'Collapse', action: this.collapse },
-    { label: 'Expand', action: this.expand },
-    { label: 'Toggle', action: this.toggle },
+    { label: 'Collapse', action: this.collapse.bind(this) },
+    { label: 'Expand', action: this.expand.bind(this) },
+    { label: 'Toggle', action: this.toggle.bind(this) },
   ];
   filter: boolean;
   icon: string;
@@ -82,7 +82,7 @@ export class SamplePoMenuLabsComponent implements OnInit {
 
     if (!this.parent) {
       this.menuItems.push({
-        action: this.changeMenuSelected, icon: this.icon, label: this.label, link: this.link, shortLabel: this.shortLabel,
+        action: this.changeMenuSelected.bind(this), icon: this.icon, label: this.label, link: this.link, shortLabel: this.shortLabel,
         badge: { value: this.badgeValue, color: this.badgeColor }
       });
     } else {
@@ -93,7 +93,10 @@ export class SamplePoMenuLabsComponent implements OnInit {
       }
 
       menuParent.subItems.push({
-        action: this.changeMenuSelected, label: this.label, link: this.link, badge: { value: this.badgeValue, color: this.badgeColor }
+        action: this.changeMenuSelected.bind(this),
+        label: this.label,
+        link: this.link,
+        badge: { value: this.badgeValue, color: this.badgeColor }
       });
     }
 

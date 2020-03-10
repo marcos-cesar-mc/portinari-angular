@@ -32,8 +32,13 @@ export class SamplePoContainerDashboardComponent implements AfterContentChecked 
   items: Array<object> = this.sampleDashboardService.getItems();
 
   public readonly actions: Array<PoPageAction> = [
-    { label: 'Share', action: this.modalOpen, icon: 'po-icon-share' },
-    { label: 'Disable notification', icon: 'po-icon-notification', action: this.disableNotification, disabled: () => this.isSubscribed },
+    { label: 'Share', action: this.modalOpen.bind(this), icon: 'po-icon-share' },
+    {
+      label: 'Disable notification',
+      icon: 'po-icon-notification',
+      action: this.disableNotification.bind(this),
+      disabled: () => this.isSubscribed
+    }
   ];
 
   public readonly breadcrumb: PoBreadcrumb = {

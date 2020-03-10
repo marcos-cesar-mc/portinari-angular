@@ -24,7 +24,7 @@ export class SamplePoTableComponentsComponent {
       { value: 'roadmap', color: 'color-07', label: 'Roadmap', tooltip: 'Component in roadmap' }
     ]},
     { property: 'component', type: 'link' },
-    { property: 'description', color: this.experimentalColor },
+    { property: 'description', color: this.experimentalColor.bind(this) },
     { property: 'extra', label: 'Extras', type: 'link', tooltip: 'Additional details', action: (value, row) => {
       this.extras(value, row);
     },
