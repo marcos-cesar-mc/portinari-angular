@@ -1,4 +1,4 @@
-import { ComponentFixture, fakeAsync, flush, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, flush, TestBed } from '@angular/core/testing';
 
 import { configureTestSuite } from './../../util-test/util-expect.spec';
 
@@ -122,29 +122,32 @@ describe('PoButtonGroupComponent:', () => {
       expect(buttonEnabled.outerHTML).toContain('p-tooltip');
     });
 
-    // TODO Ng V9
-    xit(`should contain 'tooltip' in button if button is 'enabled' and contains 'tooltip' property.`, fakeAsync(() => {
+    it(`should contain 'tooltip' in button if button is 'enabled' and contains 'tooltip' property.`, async(() => {
       const buttons = containerButtons.querySelectorAll('.po-button-group');
       const buttonEnabled = buttons[0];
 
       mouseEnter(buttonEnabled);
-      flush();
 
-      const poTooltip = containerButtons.querySelector('.po-tooltip');
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        const poTooltip = containerButtons.querySelector('.po-tooltip');
 
-      expect(poTooltip).toBeTruthy();
+        expect(poTooltip).toBeTruthy();
+      });
     }));
 
-    it(`shouldn't contain 'tooltip' in button if button is 'disabled' and contains 'tooltip' property.`, fakeAsync(() => {
+    it(`shouldn't contain 'tooltip' in button if button is 'disabled' and contains 'tooltip' property.`, async(() => {
       const buttons = containerButtons.querySelectorAll('.po-button-group');
       const buttonDisabled = buttons[1];
 
       mouseEnter(buttonDisabled);
-      flush();
 
-      const poTooltip = containerButtons.querySelector('.po-tooltip');
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        const poTooltip = containerButtons.querySelector('.po-tooltip');
 
-      expect(poTooltip).toBeNull();
+        expect(poTooltip).toBeNull();
+      });
     }));
 
   });
